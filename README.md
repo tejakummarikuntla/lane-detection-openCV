@@ -32,10 +32,16 @@ gives you the total number of pixels in the image.
 - Therefore measuring the intensity with resp to the adjacent pixels 
 - A small derivative is small change in intensity where as a big change in derivative is big change in intensity.
 - By computing the derivatives in all directions of the image we are computing the **Gradient** , Since we call gradient as a change in intensity of pixels 
-- so, when we call the **canny** function it does all for us,
+- so, when we call the **canny** function it does all for us, </br>
 ```cv2.Canny(image, low_threshold, high_ threshold)```
 
-![Normal image to Gradient Image](gradientImage_canny.PNG)
+![Normal image to Gradient Image](gradientImage_canny.PNG) </br>
+
+- If the gradient is larger than the upper threshold then it is accepted as a edge pixel, if it is below the lower threshold then it is rejected , if the gradient is between the upper and lower thrrshold then it will accepted if it is conneted to a stronger threshold.
+- recommended ratio **1:2** or **1:3**
+![Appled Canny function](Canny_image.PNG)
+- Gradients that exceed the `high_threshold` are traced as bright pixels, identifying the adjacent pixels in the image with the most rapid changes in brightness, small changes in brightness are not traced and accordingly they are black as they fall below the lower threshold 
+- We used `Canny Method ` to outline the strongest gradient in our Image 	  
 
 ```cv2.imshow('result',blur_image)``` </br>
 #waits for any keyPress to close. </br>
