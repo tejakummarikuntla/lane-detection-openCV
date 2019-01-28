@@ -27,6 +27,14 @@
 - The X-axis represents the image's width and the y- axis go along the image's hight
 - width represents the no.of columns and Hight represents the no.of rows, such that the product of width and the hight 
 gives you the total number of pixels in the image.
+- The point being not only we look our image as an array but also as a continious function of x and y, since it is a mathematical function we can perfome mathematical operation
+- derivatives helps us to determine a rapid change in brightness of a image, **Canny** function perfomes a derivative on our function in both x and y directions.
+- Therefore measuring the intensity with resp to the adjacent pixels 
+- A small derivative is small change in intensity where as a big change in derivative is big change in intensity.
+- By computing the derivatives in all directions of the image we are computing the **Gradient** , Since we call gradient as a change in intensity of pixels 
+- so, when we call the **canny** function it does all for us,
+```cv2.Canny(image, low_threshold, high_ threshold)```
+
  
 ```cv2.imshow('result',blur_image)``` </br>
 #waits for any keyPress to close. </br>
