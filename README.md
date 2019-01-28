@@ -35,7 +35,8 @@ gives you the total number of pixels in the image.
 - so, when we call the **canny** function it does all for us,
 ```cv2.Canny(image, low_threshold, high_ threshold)```
 
- 
+![Normal image to Gradient Image](lane-detection-openCV/gradientImage_canny.PNG)
+
 ```cv2.imshow('result',blur_image)``` </br>
 #waits for any keyPress to close. </br>
 ```cv2.waitKey(0)``` </br>
