@@ -48,10 +48,10 @@ gives you the total number of pixels in the image.
 Before we detect. Firstly, we need to decide a particular lanes in the image that we should work-on to write the program. </br>
 In my case it's as shown:
 
-![Decide_lane](decide_lane)
+![Decide_lane](decide_lane.PNG)
 
 - `The region_of_intrest()` returns the enclosed region of our field of view, in which our region is triangular in shape
-![region_of_intrest](region_of_intrests)
+![region_of_intrest](region_of_intrests.PNG)
 ```
 def region_of_intrest(image): 
     height = image.shape[0]
@@ -66,7 +66,7 @@ def region_of_intrest(image):
 - var `polygons` get the region of the intrest by giving the co-ordinates (x,y)
 - var `mask` has matrix created by `np.zereos_lie(image)` which means it creates an array with complete zeros which has same shape of the image's corrosponding array. Both array will have the same no.of `rows` and `coloumns`, which means mask has the same amount of pixels and dimensions of our canny_image. [pixels of mask are completely black as the elements are completely zeros]
 - Now, we have to fill the mask with the polygons with the help of openCV's `fillPolly()` function, the third argument represents the colour of our polygon  	
-![region_of_intrest_output](region_of_intrest_output)
+![region_of_intrest_output](region_of_intrest_output.PNG)
 
 ```cv2.imshow('result',blur_image)``` </br>
 #waits for any keyPress to close. </br>
