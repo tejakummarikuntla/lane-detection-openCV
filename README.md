@@ -20,11 +20,14 @@
 - But, when we apply a canny funtion we don't to apply GaussianBlur specially, </br>
 - because cany funtion internally applies it. </br>
 
-#applying Canny method to identify edges. </br>
-#The change in brightness over a series of pixels is the GRADIENT. </br>
-#A strong gradinent indicates a deep change and a small gradient indicates a slight change </br> 
-
-
+# applying Canny method to identify edges. </br>
+- The change in brightness over a series of pixels is the GRADIENT. </br>
+- A strong gradinent indicates a steep change and a small gradient indicates a shallow change </br> 
+- To compute the gradient of a image one must recongnise, that we can represent an image in a two dimensional co-ordinate space [x,y]
+- The X-axis represents the image's width and the y- axis go along the image's hight
+- width represents the no.of columns and Hight represents the no.of rows, such that the product of width and the hight 
+gives you the total number of pixels in the image.
+ 
 ```cv2.imshow('result',blur_image)``` </br>
 #waits for any keyPress to close. </br>
 ```cv2.waitKey(0)``` </br>
