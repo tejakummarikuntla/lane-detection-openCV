@@ -84,7 +84,8 @@ def region_of_intrest(image):
 - For that we are gonna use the ```cv2.bitwise_and(image, mask)```
 
 ### After applying Bitwise_AND
-[after_bitwise](bitwise_output.PNG)
+
+![after_bitwise](bitwise_output.PNG)
 - Now, it's perfectly masked out the lanes on the Road.
 
 
