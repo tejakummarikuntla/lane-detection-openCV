@@ -7,20 +7,21 @@ def canny(image):
     canny_image = cv2.Canny(blur_image,50, 150)
     return canny_image
 
-def region_of_intrest(image): 
+def region_of_intrest(image):
     height = image.shape[0]
     polygons = np.array([
     [(200, height), (1100, height), (550, 250)]
     ])
     mask = np.zeros_like(image)
     cv2.fillPoly(mask, polygons, 255)
-    return mask
+    masked_image = cv2.bitwise_and(image, mask)
+    return masked_image
 
 
 image = cv2.imread('test_image.jpg')
 lane_image = np.copy(image)
 canny = canny(lane_image)
-
+cropped_image = region_of_intrest(canny)
 # cv2.imshow('result',canny)
-cv2.imshow("result",region_of_intrest(canny))
+cv2.imshow("result",cropped_image)
 cv2.waitKey(0)

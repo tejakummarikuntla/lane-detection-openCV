@@ -68,6 +68,26 @@ def region_of_intrest(image):
 - Now, we have to fill the mask with the polygons with the help of openCV's `fillPolly()` function, the third argument represents the colour of our polygon  	
 ![region_of_intrest_output](region_of_intrest_output.PNG)
 
+# Bitwise_and for isolating the lanes with Binarys
+- If  you have already knew how Binary works with 0's and 1's then, it will be so intuitive
+- As we masked the required portion of the image by fillPolly(), Now, we need are gonna isolate the lanes in the masked portion of the image.
+- Inorder to do this, we are gonna completely use binaries to isolate.
+- As an Array representation of the masked Image, you could find the `255` for white region and `0` for black region.
+![Bin_rep_of_mask](binary.PNG)
+- Now, we are gonna turn this value in to Machine Understandable Binaries.
+- Binary Representation
+	- `255` - `11111111`
+	- `0`   - `00000000`
+![binary_rep](binary_rep.PNG)
+- Now , we are going to make a AND rep b/w existing Img and gradient Img.
+![bitwise](bitwise.PNG)
+- For that we are gonna use the ```cv2.bitwise_and(image, mask)```
+
+### After applying Bitwise_AND
+[after_bitwise](bitwise_output.PNG)
+- Now, it's perfectly masked out the lanes on the Road.
+
+
 ```cv2.imshow('result',blur_image)``` </br>
 #waits for any keyPress to close. </br>
 ```cv2.waitKey(0)``` </br>
