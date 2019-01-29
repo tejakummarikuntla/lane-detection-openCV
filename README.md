@@ -140,11 +140,23 @@ we still haven't taken into account of **vertical Lines** </br>
 - The point of all being is that perviously a point in image space represented a line in hough space,
 - Whereas now with polar coordinates for a given point by plotting the family of lines that go through it each or a distinct value for \theta and \rho we'll get a **sinusoidal Cureve**
 
-![rho_theta](rehotheta_img.PNG) ![10_points](reho10.PNG)
+![rho_theta](rehotheta_img.PNG) 
+</br>
+![10_points](reho10.PNG) </br>
+
 -This curve represents all of the different values for a \row and \theta of lines that pass through our point. </br>
 
 This might look a bit intimidating but the concept is the exact same because imagine insted of one point, we ahve 10 points which in turn result in 10 sinusoidal curve
 
+- So, this like befor a line can be detected by finding the nuber of intersection between curves the more curves intersecting means that the line represented by that intersection crosses more points.
+
+- In our case, all ten of our curves intersect at a single point which means that there is a single line with some \rho and \theta value that corcess all ten of our dots.
+
+- Now, we can apply the concept of voting that we discussed earlier such that our Hough space is still in the form of a grid.
+ 
+- Obviously, a particualr bin will have a maximum number of votes and just like befor that bin and what the maixumun nubmer of votes that's going to be your line whatever theta in our vally that this bin belongs to that's the line that we draw </br>
+
+Since, it was voted as the line of best fit in describing our data. 
 
 ```cv2.imshow('result',blur_image)``` </br>
 #waits for any keyPress to close. </br>
