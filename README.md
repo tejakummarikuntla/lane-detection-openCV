@@ -121,7 +121,22 @@ Okay, let's take these four points in our Image space, and it corrosponds the fo
 
 ![line_of_best_fit](line_of_best_fit.PNG)
 
+There's a one tiny problem, </br>
+we still haven't taken into account of **vertical Lines** </br>
+- Obviously, if you try to compute the slope of a vertial line the change in x is zero, which ultimatelu will always evaluate to a slope of infinity which is not something that we can represent.
 
+- we need more robust representation of lines, so that we don't encounter any numeric problems.
+
+- Clearly, in vertival stright line, **y=mx+c** dosen't fit and it cannot represents vertica lines.
+
+- well, we can insted express it in the **polar** co-ordinates sstem **rho** and **theta**, such that our line equation can be  </br>
+- ```ρ = xcos/theta + ysin/theta```
+- The idea is the same. It's still the equation of line , but in polar coordinates.
+
+- **ρ** is the perpendicular distance from origin to the drawn line.
+- /theta indicates the angle of inclination of the normal line from the x-axis, which is measured in radians clockwise with rep to the positive x axis.
+
+- 
 
 
 ```cv2.imshow('result',blur_image)``` </br>
