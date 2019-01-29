@@ -130,11 +130,12 @@ we still haven't taken into account of **vertical Lines** </br>
 - Clearly, in vertival stright line, **y=mx+c** dosen't fit and it cannot represents vertica lines.
 
 - well, we can insted express it in the **polar** co-ordinates sstem **rho** and **theta**, such that our line equation can be  </br>
-- ```ρ = xcos/theta + ysin/theta```
+- ```ρ = xcos\theta + ysin\theta```
+![equation](CodeCogsEqn.gif)
 - The idea is the same. It's still the equation of line , but in polar coordinates.
 
 - **ρ** is the perpendicular distance from origin to the drawn line.
-- /theta indicates the angle of inclination of the normal line from the x-axis, which is measured in radians clockwise with rep to the positive x axis.
+- \theta indicates the angle of inclination of the normal line from the x-axis, which is measured in radians clockwise with rep to the positive x axis.
 
 - 
 
