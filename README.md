@@ -108,7 +108,19 @@ What if we have two points in x,y plane.
 why is this relevent? ,</br>
 
 well, this idea of identifying possible lines from a series of points is how we are going to find lines in our gradient image 	
-- we call the gradient image as just a series of white points, which represents edges in our **image Space (x,y) Plane** 
+- we call the gradient image as just a series of white points, which represents edges in our **image Space (x,y) Plane**  </br>
+
+Okay, let's take these four points in our Image space, and it corrosponds the following Hough Space, What we are gonna do is:
+- First, split our Hough space in to a grid
+- Each **Bin** inside our grid corrosponding to the slope and y-intersept value of a particular line 
+- For example, what if I told you, these points belongs to a line, 
+- well, all of these points intersection in Hough space are inside of a single bin 
+- For every point of intersection we are going to cast the votes, inside of the bin that belongs to 
+- The bin with the maximum number of votes, that's gonna be your line.
+- whatever **m and b** value that **bin** belongs to that's the line we are going to draw. Since, it was voted as the line of best fit in discribing our data.
+
+![line_of_best_fit](line_of_best_fit.PNG)
+
 
 
 
