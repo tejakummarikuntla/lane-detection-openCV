@@ -137,7 +137,13 @@ we still haven't taken into account of **vertical Lines** </br>
 - **ρ** is the perpendicular distance from origin to the drawn line.
 - \theta indicates the angle of inclination of the normal line from the x-axis, which is measured in radians clockwise with rep to the positive x axis.
 
-- 
+- The point of all being is that perviously a point in image space represented a line in hough space,
+- Whereas now with polar coordinates for a given point by plotting the family of lines that go through it each or a distinct value for \theta and \rho we'll get a **sinusoidal Cureve**
+
+![rho_theta](rehotheta_img.PNG) ![10_points](reho10.PNG)
+-This curve represents all of the different values for a \row and \theta of lines that pass through our point. </br>
+
+This might look a bit intimidating but the concept is the exact same because imagine insted of one point, we ahve 10 points which in turn result in 10 sinusoidal curve
 
 
 ```cv2.imshow('result',blur_image)``` </br>
