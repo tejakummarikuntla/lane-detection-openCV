@@ -156,7 +156,9 @@ This might look a bit intimidating but the concept is the exact same because ima
  
 - Obviously, a particualr bin will have a maximum number of votes and just like befor that bin and what the maixumun nubmer of votes that's going to be your line whatever theta in our vally that this bin belongs to that's the line that we draw </br>
 
-Since, it was voted as the line of best fit in describing our data. 
+Since, it was voted as the line of best fit in describing our data.
+
+![output](output.PNG) 
 
 ```cv2.imshow('result',blur_image)``` </br>
 #waits for any keyPress to close. </br>
