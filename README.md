@@ -88,7 +88,31 @@ def region_of_intrest(image):
 ![after_bitwise](bitwise_output.PNG)
 - Now, it's perfectly masked out the lanes on the Road.
 
+# Hough Transform 
+This technique helps to detect the stright lines in the image and helps indentifing Lane lines.
+![hough-ex](houghSpace_ex.PNG)
+- As you could see the Hough space is the representation of the **b,m** axis in the Line equation **y=mx+b**
+- so, the complete line in the space can be represented as a single point in the **Hough Space** </br>
+Similarly, Imagine there's a single point in x,y axis and there are many possible lines that can pass through this dot, each line with different values of *m* and *b* 
+![hough_space_dot](houghSpaceDotoLine.PNG)
+- Notice that a single point in (x,y) space is represented by a line in **Hough Space** </br>
+What if we have two points in x,y plane.
+
+![two_pointns_in_xy](twoDotsInxy.PNG)
+
+- There are many possible ways that each line can pass through the poits idividually, each line with differnt solpe and y-intersept values
+- But, there is one point that is consistent with both the points 
+- we can determine that by looking at the point of intersection in **Hough Sapce**, because that intersection points represents the *m*,*b* values of the lines 
+- It happens in the same way if any other points comes in x,y plane and intersect in Hough space. </br>
+
+why is this relevent? ,</br>
+
+well, this idea of identifying possible lines from a series of points is how we are going to find lines in our gradient image 	
+- we call the gradient image as just a series of white points, which represents edges in our **image Space (x,y) Plane** 
+
+
 
 ```cv2.imshow('result',blur_image)``` </br>
 #waits for any keyPress to close. </br>
 ```cv2.waitKey(0)``` </br>
+
