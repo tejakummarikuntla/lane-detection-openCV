@@ -160,7 +160,3 @@ Since, it was voted as the line of best fit in describing our data.
 
 ![output](output.PNG) 
 
-```cv2.imshow('result',blur_image)``` </br>
-#waits for any keyPress to close. </br>
-```cv2.waitKey(0)``` </br>
-
