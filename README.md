@@ -13,8 +13,8 @@
 - filtering and smoothing the image can be done by guassian filter </br>
 
 # To smooth the image </br>
-#we can smooth by modifing the value of a pixel by average value of the </br>
-#pixel intensities around the target pixel. </br>
+- we can smooth by modifing the value of a pixel by average value of the </br>
+pixel intensities around the target pixel. </br>
 #averaging out the pixels in the image to reduce noise is done by a kernal. </br>
 ```blur_image = cv2.GaussianBlur(gray_image, (5,5), 0)``` </br>
 - But, when we apply a canny funtion we don't to apply GaussianBlur specially, </br>
