@@ -5,7 +5,7 @@
 ```lane_image = np.copy(image)```
 # converting the image in to gray sclae for reducing the channels </br>
 - gray scale images only has single channel, while RGB has three channesl </br>
-```gray_image = cv2.cvtColor(lane_image,cv2.COLOR_RGB2GRAY)``` </br>
+```gray_image = cv2.cvtColor(lane_image,cv2.COLOR_RGB2GRAY)```  </br>
 
 - we need to clear the noise in the image, because Image noise can create false noise </br>
 - ultimately affects edge detection. </br>
@@ -33,7 +33,7 @@ gives you the total number of pixels in the image.
 - A small derivative is small change in intensity where as a big change in derivative is big change in intensity.
 - By computing the derivatives in all directions of the image we are computing the **Gradient** , Since we call gradient as a change in intensity of pixels 
 - so, when we call the **canny** function it does all for us, </br>
-```cv2.Canny(image, low_threshold, high_ threshold)```
+```cv2.Canny(image, low_threshold, high_ threshold)``` </br>
 
 ![Normal image to Gradient Image](gradientImage_canny.PNG) </br>
 
