@@ -1,5 +1,7 @@
 # lane-detection-openCV
 
+[![HitCount](http://hits.dwyl.io/tejakummarikuntla/lane-detection-openCV.svg)](http://hits.dwyl.io/tejakummarikuntla/lane-detection-openCV)
+
 ```image = cv2.imread('test_image.jpg')``` </br>
 - making a copy of image in array rep </br>
 ```lane_image = np.copy(image)```
