@@ -1,8 +1,7 @@
 # lane-detection-openCV
+To Run the program 
+> python source_code_ext.py   
 
-```image = cv2.imread('test_image.jpg')``` </br>
-- making a copy of image in array rep </br>
-```lane_image = np.copy(image)```
 # converting the image in to gray sclae for reducing the channels </br>
 - gray scale images only has single channel, while RGB has three channesl </br>
 ```gray_image = cv2.cvtColor(lane_image,cv2.COLOR_RGB2GRAY)```  </br>
