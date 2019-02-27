@@ -35,11 +35,11 @@ gives you the total number of pixels in the image.
 - so, when we call the **canny** function it does all for us, </br>
 ```cv2.Canny(image, low_threshold, high_ threshold)``` </br>
 
-![Normal image to Gradient Image](gradientImage_canny.PNG) </br>
+![Normal image to Gradient Image](readme-imgs/gradientImage_canny.PNG) </br>
 
 - If the gradient is larger than the upper threshold then it is accepted as a edge pixel, if it is below the lower threshold then it is rejected , if the gradient is between the upper and lower thrrshold then it will accepted if it is conneted to a stronger threshold.
 - recommended ratio **1:2** or **1:3**
-![Appled Canny function](Canny_image.PNG)
+![Appled Canny function](readme-imgs/Canny_image.PNG)
 - Gradients that exceed the `high_threshold` are traced as bright pixels, identifying the adjacent pixels in the image with the most rapid changes in brightness, small changes in brightness are not traced and accordingly they are black as they fall below the lower threshold 
 - We used `Canny Method ` to outline the strongest gradient in our Image 	
 
@@ -48,10 +48,10 @@ gives you the total number of pixels in the image.
 Before we detect. Firstly, we need to decide a particular lanes in the image that we should work-on to write the program. </br>
 In my case it's as shown:
 
-![Decide_lane](decide_lane.PNG)
+![Decide_lane](readme-imgs/decide_lane.PNG)
 
 - `The region_of_intrest()` returns the enclosed region of our field of view, in which our region is triangular in shape
-![region_of_intrest](region_of_intrests.PNG)
+![region_of_intrest](readme-imgs/region_of_intrests.PNG)
 ```
 def region_of_intrest(image): 
     height = image.shape[0]
@@ -66,39 +66,39 @@ def region_of_intrest(image):
 - var `polygons` get the region of the intrest by giving the co-ordinates (x,y)
 - var `mask` has matrix created by `np.zereos_lie(image)` which means it creates an array with complete zeros which has same shape of the image's corrosponding array. Both array will have the same no.of `rows` and `coloumns`, which means mask has the same amount of pixels and dimensions of our canny_image. [pixels of mask are completely black as the elements are completely zeros]
 - Now, we have to fill the mask with the polygons with the help of openCV's `fillPolly()` function, the third argument represents the colour of our polygon  	
-![region_of_intrest_output](region_of_intrest_output.PNG)
+![region_of_intrest_output](readme-imgs/region_of_intrest_output.PNG)
 
 # Bitwise_and for isolating the lanes with Binarys
 - If  you have already knew how Binary works with 0's and 1's then, it will be so intuitive
 - As we masked the required portion of the image by fillPolly(), Now, we need are gonna isolate the lanes in the masked portion of the image.
 - Inorder to do this, we are gonna completely use binaries to isolate.
 - As an Array representation of the masked Image, you could find the `255` for white region and `0` for black region.
-![Bin_rep_of_mask](binary.PNG)
+![Bin_rep_of_mask](readme-imgs/binary.PNG)
 - Now, we are gonna turn this value in to Machine Understandable Binaries.
 - Binary Representation
 	- `255` - `11111111`
 	- `0`   - `00000000`
-![binary_rep](binary_rep.PNG)
+![binary_rep](readme-imgs/binary_rep.PNG)
 - Now , we are going to make a AND rep b/w existing Img and gradient Img.
-![bitwise](bitwise.PNG)
+![bitwise](readme-imgs/bitwise.PNG)
 - For that we are gonna use the ```cv2.bitwise_and(image, mask)```
 
 ### After applying Bitwise_AND
 
-![after_bitwise](bitwise_output.PNG)
+![after_bitwise](readme-imgs/bitwise_output.PNG)
 - Now, it's perfectly masked out the lanes on the Road.
 
 # Hough Transform 
 This technique helps to detect the stright lines in the image and helps indentifing Lane lines.
-![hough-ex](houghSpace_ex.PNG)
+![hough-ex](readme-imgs/houghSpace_ex.PNG)
 - As you could see the Hough space is the representation of the **b,m** axis in the Line equation **y=mx+b**
 - so, the complete line in the space can be represented as a single point in the **Hough Space** </br>
 Similarly, Imagine there's a single point in x,y axis and there are many possible lines that can pass through this dot, each line with different values of *m* and *b* 
-![hough_space_dot](houghSpaceDotoLine.PNG)
+![hough_space_dot](readme-imgs/houghSpaceDotoLine.PNG)
 - Notice that a single point in (x,y) space is represented by a line in **Hough Space** </br>
 What if we have two points in x,y plane.
 
-![two_pointns_in_xy](twoDotsInxy.PNG)
+![two_pointns_in_xy](readme-imgs/twoDotsInxy.PNG)
 
 - There are many possible ways that each line can pass through the poits idividually, each line with differnt solpe and y-intersept values
 - But, there is one point that is consistent with both the points 
@@ -119,7 +119,7 @@ Okay, let's take these four points in our Image space, and it corrosponds the fo
 - The bin with the maximum number of votes, that's gonna be your line.
 - whatever **m and b** value that **bin** belongs to that's the line we are going to draw. Since, it was voted as the line of best fit in discribing our data.
 
-![line_of_best_fit](line_of_best_fit.PNG)
+![line_of_best_fit](readme-imgs/line_of_best_fit.PNG)
 
 There's a one tiny problem, </br>
 we still haven't taken into account of **vertical Lines** </br>
@@ -131,7 +131,7 @@ we still haven't taken into account of **vertical Lines** </br>
 
 - well, we can insted express it in the **polar** co-ordinates sstem **rho** and **theta**, such that our line equation can be  </br>
 - ```ρ = xcos\theta + ysin\theta```
-![equation](CodeCogsEqn.gif)
+![equation](readme-imgs/CodeCogsEqn.gif)
 - The idea is the same. It's still the equation of line , but in polar coordinates.
 
 - **ρ** is the perpendicular distance from origin to the drawn line.
@@ -140,9 +140,9 @@ we still haven't taken into account of **vertical Lines** </br>
 - The point of all being is that perviously a point in image space represented a line in hough space,
 - Whereas now with polar coordinates for a given point by plotting the family of lines that go through it each or a distinct value for \theta and \rho we'll get a **sinusoidal Cureve**
 
-![rho_theta](rehotheta_img.PNG) 
+![rho_theta](readme-imgs/rehotheta_img.PNG) 
 </br>
-![10_points](reho10.PNG) </br>
+![10_points](readme-imgs/reho10.PNG) </br>
 
 -This curve represents all of the different values for a \row and \theta of lines that pass through our point. </br>
 
@@ -158,5 +158,5 @@ This might look a bit intimidating but the concept is the exact same because ima
 
 Since, it was voted as the line of best fit in describing our data.
 
-![output](output.PNG) 
+![output](readme-imgs/output.PNG) 
 
