@@ -104,7 +104,7 @@ What if we have two points in x,y plane.
 - we can determine that by looking at the point of intersection in **Hough Sapce**, because that intersection points represents the *m*,*b* values of the lines 
 - It happens in the same way if any other points comes in x,y plane and intersect in Hough space. </br>
 
-why is this relevent? ,</br>
+why is this relevent?,</br>
 
 well, this idea of identifying possible lines from a series of points is how we are going to find lines in our gradient image 	
 - we call the gradient image as just a series of white points, which represents edges in our **image Space (x,y) Plane**  </br>
