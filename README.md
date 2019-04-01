@@ -4,7 +4,7 @@ To Run the program
 
 # converting the image in to gray sclae for reducing the channels </br>
 - gray scale images only has single channel, while RGB has three channesl </br>
-```gray_image = cv2.cvtColor(lane_image,cv2.COLOR_RGB2GRAY)```  </br>
+```gray_image = cv2.cvtColor(lane_image,cv2.COLOR_RGB2GRAY)```</br>
 
 - we need to clear the noise in the image, because Image noise can create false noise </br>
 - ultimately affects edge detection. </br>
@@ -21,7 +21,7 @@ pixel intensities around the target pixel. </br>
 
 # applying Canny method to identify edges. </br>
 - The change in brightness over a series of pixels is the GRADIENT. </br>
-- A strong gradinent indicates a steep change and a small gradient indicates a shallow change </br> 
+- A strog gradinent indicates a steep change and a small gradient indicates a shallow change </br> 
 - To compute the gradient of a image one must recongnise, that we can represent an image in a two dimensional co-ordinate space [x,y]
 - The X-axis represents the image's width and the y- axis go along the image's hight
 - width represents the no.of columns and Hight represents the no.of rows, such that the product of width and the hight 
